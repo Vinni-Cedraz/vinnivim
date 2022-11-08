@@ -1,13 +1,9 @@
 local servers = {
   "clangd",
 	"sumneko_lua",
-	"cssls",
 	"html",
-	"tsserver",
-	"pyright",
 	"bashls",
-	"jsonls",
-	"yamlls",
+  "robotframework_lsp",
 }
 
 local settings = {

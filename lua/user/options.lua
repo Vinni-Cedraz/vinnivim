@@ -1,4 +1,6 @@
 vim.opt.backup = false                          -- creates a backup file
+-- sets up the colorscheme:
+vim.cmd(':colorscheme gruvbox')
 -- my basic settings, begin
 vim.opt.scrolloff = 4
 vim.opt.relativenumber = true
