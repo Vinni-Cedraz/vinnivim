@@ -1,7 +1,23 @@
--- Shorten function name
 local keymap = vim.keymap.set
 -- Silent keymap option
 local opts = { silent = true }
+-- KEYMAPPINGS [VIEW ALL THE DEFAULTS BY PRESSING <LEADER>LK]
+keymap('n', '<leader>1', ':colorscheme system76<CR>', opts)
+keymap('n', '<leader>2', ':colorscheme gruvbox<CR>', opts)
+keymap('n', '<leader>3', ':colorscheme terafox<CR>', opts)
+keymap('n', '<leader>t', ':UndotreeToggle<CR>', opts)
+vim.cmd [[autocmd BufEnter * silent! helptags ALL]]  -- this one enables dap helptags
+keymap('n', '<F7>', ':lua require"dap".step_over()<CR>', opts)
+keymap('n', '<F8>', ':lua require"dap".step_into()<CR>', opts)
+keymap('n', 'ff', ':Telescope find_files cwd=~/ <CR>', opts)
+keymap('i', 'jj', '<Esc>', opts)
+keymap("n", "<S-l>", ":bnext<CR>", opts)   -- Navigate buffers
+keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap('n', '<S-w>', ':w<CR>', opts)
+keymap('n', '<S-x>', ':x<CR>', opts)
+keymap('n', '<S-r>', ':redo<CR>', opts)
+keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)  -- Close current buffer
+keymap('n', '<C-q>', ':qa!<cr>', opts)
 
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
@@ -22,21 +38,9 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
--- Resize with arrows
-keymap("n", "<C-Up>", ":resize -2<CR>", opts)
-keymap("n", "<C-Down>", ":resize +2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
-
--- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
-
 -- Clear highlights
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 
--- Close buffers
-keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
 
 -- Better paste
 keymap("v", "p", '"_dP', opts)
@@ -47,7 +51,7 @@ keymap("i", "jk", "<ESC>", opts)
 
 -- Visual --
 -- Stay in indent mode
-keymap("v", "<", "<gv", opts)
+keymap("v", "<", "<gv", opts)        --- indent a bunch of stuf together!!
 keymap("v", ">", ">gv", opts)
 
 -- Plugins --
@@ -56,7 +60,6 @@ keymap("v", ">", ">gv", opts)
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- Telescope
-keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)

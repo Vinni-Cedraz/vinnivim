@@ -1,3 +1,29 @@
+local cmd = vim.cmd
+
+cmd "command! Hello echo 'Hello, World!'"
+
+-- // Now the command Hello will be keymapped to the  - key on normal
+cmd "nnoremap <silent> - :Hello<CR>"
+
+-- the following autocommand executes :set suffixesadd=.c everytime a .c file
+-- or a .h file is opened
+
+vim.api.nvim_create_autocmd("BufRead", {
+	pattern = "*.c,*.h",
+	callback = function()
+		vim.cmd "set suffixesadd=.c"
+	end,
+})
+
+-- the following autocommand sets as path the current directory, libs, and the
+-- srcs and all its subdirectories everytime a .c file or a .h file is opened
+vim.api.nvim_create_autocmd("BufRead", {
+	pattern = "*.c,*.h",
+	callback = function()
+		vim.cmd "set path+=.,libs,srcs/**"
+	end,
+})
+
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = { "qf", "help", "man", "lspinfo", "spectre_panel" },
 	callback = function()
