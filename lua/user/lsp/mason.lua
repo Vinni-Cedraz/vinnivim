@@ -3,7 +3,6 @@ local servers = {
 	"sumneko_lua",
 	"html",
 	"bashls",
-  "robotframework_lsp",
 }
 
 local settings = {
@@ -18,7 +17,7 @@ local settings = {
 	log_level = vim.log.levels.INFO,
 	max_concurrent_installers = 4,
 }
-
+require'lspconfig'.robotframework_ls.setup{}
 require("mason").setup(settings)
 require("mason-lspconfig").setup({
 	ensure_installed = servers,

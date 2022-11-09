@@ -6,7 +6,7 @@ end
 
 npairs.setup({
 	check_ts = true, -- treesitter integration
-	disable_filetype = { "TelescopePrompt" },
+	disable_filetype = { "telescopeprompt" },
 	ts_config = {
 		lua = { "string", "source" },
 		javascript = { "string", "template_string" },
