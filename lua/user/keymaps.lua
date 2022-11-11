@@ -18,6 +18,7 @@ keymap('n', '<S-x>', ':x<CR>', opts)
 keymap('n', '<S-r>', ':redo<CR>', opts)
 keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)  -- Close current buffer
 keymap('n', '<C-q>', ':qa!<cr>', opts)
+keymap('n', '<C-m>', ':Mason<CR>', opts)
 
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
