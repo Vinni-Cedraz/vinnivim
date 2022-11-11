@@ -103,9 +103,6 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
 		end
 	end,
 })
---
--- vim.api.nvim_create_autocmd({ "VimEnter" }, {
--- 	callback = function()
--- 		vim.cmd("TransparentEnable")
--- 	end,
--- })
+
+-- this one enables dap helptags
+vim.cmd([[autocmd BufEnter * silent! helptags ALL]])
