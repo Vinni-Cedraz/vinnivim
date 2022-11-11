@@ -103,9 +103,9 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
 		end
 	end,
 })
-
-vim.api.nvim_create_autocmd({ "VimEnter" }, {
-	callback = function()
-		vim.cmd("TransparentToggle")
-	end,
-})
+--
+-- vim.api.nvim_create_autocmd({ "VimEnter" }, {
+-- 	callback = function()
+-- 		vim.cmd("TransparentEnable")
+-- 	end,
+-- })
