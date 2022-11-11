@@ -67,33 +67,33 @@ return packer.startup(function(use)
 	use({ "Lunarvim/colorschemes" })
 	use({ "EdenEast/nightfox.nvim" })
 
-	-- cmp plugins
+	-- autocomplete plugins
 	use({ "hrsh7th/nvim-cmp", commit = "b0dff0ec4f2748626aae13f011d1a47071fe9abc" }) -- The completion plugin
 	use({ "hrsh7th/cmp-buffer", commit = "3022dbc9166796b644a841a02de8dd1cc1d311fa" }) -- buffer completions
 	use({ "hrsh7th/cmp-path", commit = "447c87cdd6e6d6a1d2488b1d43108bfa217f56e1" }) -- path completions
 	use({ "hrsh7th/cmp-nvim-lsp", commit = "affe808a5c56b71630f17aa7c38e15c59fd648a8" })
 	use({ "hrsh7th/cmp-nvim-lua", commit = "d276254e7198ab7d00f117e88e223b4bd8c02d21" })
-	use({ "github/copilot.vim" })
-	-- use({
-	-- 	"zbirenbaum/copilot-cmp",
-	-- 	after = { "copilot.lua", "nvim-cmp" },
-	-- 	config = function()
-	-- 		require("copilot_cmp").setup({
-	-- 			method = "getCompletionsCycling",
-	-- 		})
-	-- 	end,
-	-- })
-	-- use({
-	-- 	"zbirenbaum/copilot.lua",
-	-- 	event = "InsertEnter",
-	-- 	config = function()
-	-- 		vim.schedule(function()
-	-- 			require("copilot").setup()
-	-- 		end)
-	-- 	end,
-	-- })
-	--
-	-- L
+	-- use({ "github/copilot.vim" })
+	use({
+		"zbirenbaum/copilot-cmp",
+		after = { "copilot.lua", "nvim-cmp" },
+		config = function()
+			require("copilot_cmp").setup({
+				method = "getCompletionsCycling",
+			})
+		end,
+	})
+	use({
+		"zbirenbaum/copilot.lua",
+		event = "InsertEnter",
+		config = function()
+			vim.schedule(function()
+				require("copilot").setup()
+			end)
+		end,
+	})
+
+	-- LSP
 	use({ "williamboman/nvim-lsp-installer", commit = "e9f13d7acaa60aff91c58b923002228668c8c9e6" }) -- simple to use language server installer
 	use({ "neovim/nvim-lspconfig", commit = "f11fdff7e8b5b415e5ef1837bdcdd37ea6764dda" }) -- enable LSP
 	use({ "williamboman/mason.nvim", commit = "c2002d7a6b5a72ba02388548cfaf420b864fbc12" })
