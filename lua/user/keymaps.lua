@@ -1,6 +1,11 @@
 local keymap = vim.keymap.set
 -- Silent keymap option
 local opts = { silent = true }
+
+--Remap space as leader key
+keymap("", "<Space>", "<Nop>", opts)
+vim.g.mapleader = " "
+
 -- KEYMAPPINGS [VIEW ALL THE DEFAULTS BY PRESSING <LEADER>LK]
 keymap("n", "<C-1>", ":colorscheme system76<CR>", opts)
 keymap("n", "<C-2>", ":colorscheme gruvbox<CR>", opts)
@@ -19,13 +24,9 @@ keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts) -- Close current buffer
 keymap("n", "<C-q>", ":qa!<cr>", opts)
 keymap("n", "<C-m>", ":Mason<CR>", opts)
 keymap("n", "<S-f>", ":lua vim.lsp.buf.code_action()<CR>", opts) -- this one keymaps accepting clangd's available fix to S-f:
-keymap("n", "<leader>C", ":Copilot status<CR>", opts)
-keymap("n", "<leader>C", ":Copilot panel<CR>", opts)
-
-
---Remap space as leader key
-keymap("", "<Space>", "<Nop>", opts)
-vim.g.mapleader = " "
+keymap("n", "<C-s>", ":Copilot status<CR>", opts)
+keymap("n", "<F4>", ":Copilot panel<CR>", opts)
+keymap("n", "<leader>cp", ":Copilot enable<CR>", opts)
 
 -- Modes
 --   normal_mode = "n",
