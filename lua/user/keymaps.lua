@@ -2,25 +2,23 @@ local keymap = vim.keymap.set
 -- Silent keymap option
 local opts = { silent = true }
 -- KEYMAPPINGS [VIEW ALL THE DEFAULTS BY PRESSING <LEADER>LK]
-keymap('n', '<C-1>', ':colorscheme system76<CR>', opts)
-keymap('n', '<C-2>', ':colorscheme gruvbox<CR>', opts)
-keymap('n', '<C-3>', ':colorscheme terafox<CR>', opts)
-keymap('n', '<F3>', ':UndotreeToggle<CR>', opts)
-keymap('n', '<F7>', ':lua require"dap".step_over()<CR>', opts)
-keymap('n', '<F8>', ':lua require"dap".step_into()<CR>', opts)
-keymap('n', 'ff', ':Telescope find_files cwd=~/ <CR>', opts)
-keymap('i', 'jj', '<Esc>', opts)
-keymap("n", "<S-l>", ":bnext<CR>", opts)   -- Navigate buffers
+keymap("n", "<C-1>", ":colorscheme system76<CR>", opts)
+keymap("n", "<C-2>", ":colorscheme gruvbox<CR>", opts)
+keymap("n", "<C-3>", ":colorscheme terafox<CR>", opts)
+keymap("n", "<F3>", ":UndotreeToggle<CR>", opts)
+keymap("n", "<F7>", ':lua require"dap".step_over()<CR>', opts)
+keymap("n", "<F8>", ':lua require"dap".step_into()<CR>', opts)
+keymap("n", "ff", ":Telescope find_files cwd=~/ <CR>", opts)
+keymap("i", "jj", "<Esc>", opts)
+keymap("n", "<S-l>", ":bnext<CR>", opts) -- Navigate buffers
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
-keymap('n', '<S-w>', ':w<CR>', opts)
-keymap('n', '<S-x>', ':x<CR>', opts)
-keymap('n', '<S-r>', ':redo<CR>', opts)
-keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)  -- Close current buffer
-keymap('n', '<C-q>', ':qa!<cr>', opts)
-keymap('n', '<C-m>', ':Mason<CR>', opts)
-keymap('n', '<S-f>', ':lua vim.lsp.buf.code_action()<CR>', opts)  -- this one keymaps accepting clangd's available fix to S-f:
-
-
+keymap("n", "<S-w>", ":w<CR>", opts)
+keymap("n", "<S-x>", ":x<CR>", opts)
+keymap("n", "<S-r>", ":redo<CR>", opts)
+keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts) -- Close current buffer
+keymap("n", "<C-q>", ":qa!<cr>", opts)
+keymap("n", "<C-m>", ":Mason<CR>", opts)
+keymap("n", "<S-f>", ":lua vim.lsp.buf.code_action()<CR>", opts) -- this one keymaps accepting clangd's available fix to S-f:
 
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
@@ -44,7 +42,6 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 -- Clear highlights
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 
-
 -- Better paste
 keymap("v", "p", '"_dP', opts)
 
@@ -54,7 +51,7 @@ keymap("i", "jk", "<ESC>", opts)
 
 -- Visual --
 -- Stay in indent mode
-keymap("v", "<", "<gv", opts)        --- indent a bunch of stuf together!!
+keymap("v", "<", "<gv", opts) --- indent a bunch of stuf together!!
 keymap("v", ">", ">gv", opts)
 
 -- Plugins --

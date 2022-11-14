@@ -1,6 +1,6 @@
 local status_ok, lualine = pcall(require, "lualine")
 if not status_ok then
-  return
+	return
 end
 
 -- local hide_in_width = function()
@@ -8,12 +8,12 @@ end
 -- end
 --
 local diagnostics = {
-  "diagnostics",
-  sources = { "nvim_diagnostic" },
-  sections = { "error", "warn" },
-  symbols = { error = " ", warn = " " },
-  colored = true,
-  always_visible = true,
+	"diagnostics",
+	sources = { "nvim_diagnostic" },
+	sections = { "error", "warn" },
+	symbols = { error = " ", warn = " " },
+	colored = true,
+	always_visible = true,
 }
 
 -- local diff = {
@@ -24,13 +24,13 @@ local diagnostics = {
 -- }
 --
 local filetype = {
-  "filetype",
-  icons_enabled = true,
+	"filetype",
+	icons_enabled = true,
 }
 
 local location = {
-  "location",
-  padding = 0,
+	"location",
+	padding = 0,
 }
 
 -- local spaces = function()
@@ -38,21 +38,21 @@ local location = {
 -- end
 --
 
-lualine.setup {
-  options = {
-    globalstatus = true,
-    icons_enabled = true,
-    theme = 'auto',
-    component_separators = { left = "", right = "" },
-    section_separators = { left = "", right = "" },
-    disabled_filetypes = { "alpha", "dashboard" },
-    always_divide_middle = true,
-  },
-  sections = {
-    lualine_a = { "mode" },
-    lualine_b = { "branch" },
-    lualine_c = { location },
-    lualine_x = { filetype },
-    lualine_y = { diagnostics },
-  },
-}
+lualine.setup({
+	options = {
+		globalstatus = true,
+		icons_enabled = true,
+		theme = "auto",
+		component_separators = { left = "", right = "" },
+		section_separators = { left = "", right = "" },
+		disabled_filetypes = { "alpha", "dashboard" },
+		always_divide_middle = true,
+	},
+	sections = {
+		lualine_a = { "mode" },
+		lualine_b = { "branch" },
+		lualine_c = { location },
+		lualine_x = { filetype },
+		lualine_y = { diagnostics },
+	},
+})
