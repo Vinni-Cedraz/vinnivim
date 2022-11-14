@@ -129,11 +129,6 @@ _G.packer_plugins = {
     path = "/home/vcedraz-/.local/share/nvim/site/pack/packer/start/colorschemes",
     url = "https://github.com/Lunarvim/colorschemes"
   },
-  ["copilot.vim"] = {
-    loaded = true,
-    path = "/home/vcedraz-/.local/share/nvim/site/pack/packer/start/copilot.vim",
-    url = "https://github.com/github/copilot.vim"
-  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/home/vcedraz-/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",

@@ -1,8 +1,8 @@
 local cmd = vim.cmd
 
+-- this one enables dap helptags
+cmd([[autocmd BufEnter * silent! helptags ALL]])
 cmd("command! Hello echo 'Hello, World!'")
-
--- // Now the command Hello will be keymapped to the  - key on normal
 cmd("nnoremap <silent> - :Hello<CR>")
 
 -- the following autocommand executes :set suffixesadd=.c/.h everytime a .c/.h file is opened
@@ -100,5 +100,3 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
 	end,
 })
 
--- this one enables dap helptags
-vim.cmd([[autocmd BufEnter * silent! helptags ALL]])

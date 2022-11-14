@@ -19,6 +19,9 @@ keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts) -- Close current buffer
 keymap("n", "<C-q>", ":qa!<cr>", opts)
 keymap("n", "<C-m>", ":Mason<CR>", opts)
 keymap("n", "<S-f>", ":lua vim.lsp.buf.code_action()<CR>", opts) -- this one keymaps accepting clangd's available fix to S-f:
+keymap("n", "<leader>C", ":Copilot status<CR>", opts)
+keymap("n", "<leader>C", ":Copilot panel<CR>", opts)
+
 
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
