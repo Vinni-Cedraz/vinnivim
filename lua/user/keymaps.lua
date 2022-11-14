@@ -6,7 +6,6 @@ keymap('n', '<C-1>', ':colorscheme system76<CR>', opts)
 keymap('n', '<C-2>', ':colorscheme gruvbox<CR>', opts)
 keymap('n', '<C-3>', ':colorscheme terafox<CR>', opts)
 keymap('n', '<F3>', ':UndotreeToggle<CR>', opts)
-vim.cmd [[autocmd BufEnter * silent! helptags ALL]]  -- this one enables dap helptags
 keymap('n', '<F7>', ':lua require"dap".step_over()<CR>', opts)
 keymap('n', '<F8>', ':lua require"dap".step_into()<CR>', opts)
 keymap('n', 'ff', ':Telescope find_files cwd=~/ <CR>', opts)
