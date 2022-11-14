@@ -74,24 +74,24 @@ return packer.startup(function(use)
 	use({ "hrsh7th/cmp-nvim-lsp", commit = "affe808a5c56b71630f17aa7c38e15c59fd648a8" })
 	use({ "hrsh7th/cmp-nvim-lua", commit = "d276254e7198ab7d00f117e88e223b4bd8c02d21" })
 	-- use({ "github/copilot.vim" })
-	use({
-		"zbirenbaum/copilot-cmp",
-		after = { "copilot.lua", "nvim-cmp" },
-		config = function()
-			require("copilot_cmp").setup({
-				method = "getCompletionsCycling",
-			})
-		end,
-	})
-	use({
-		"zbirenbaum/copilot.lua",
-		event = "InsertEnter",
-		config = function()
-			vim.schedule(function()
-				require("copilot").setup()
-			end)
-		end,
-	})
+	-- use({
+	-- 	"zbirenbaum/copilot-cmp",
+	-- 	after = { "copilot.lua", "nvim-cmp" },
+	-- 	config = function()
+	-- 		require("copilot_cmp").setup({
+	-- 			method = "getCompletionsCycling",
+	-- 		})
+	-- 	end,
+	-- })
+	-- use({
+	-- 	"zbirenbaum/copilot.lua",
+	-- 	event = "InsertEnter",
+	-- 	config = function()
+	-- 		vim.schedule(function()
+	-- 			require("copilot").setup()
+	-- 		end)
+	-- 	end,
+	-- })
 
 	-- LSP
 	use({ "williamboman/nvim-lsp-installer", commit = "e9f13d7acaa60aff91c58b923002228668c8c9e6" }) -- simple to use language server installer
