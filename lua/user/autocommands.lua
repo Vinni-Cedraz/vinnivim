@@ -87,6 +87,7 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 
 vim.api.nvim_create_autocmd({ "VimEnter" }, {
 	callback = function()
+		vim.cmd("echo 'Welcome, ' . $USER")
 		vim.cmd("hi link illuminatedWord LspReferenceText")
 	end,
 })
@@ -100,3 +101,13 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
 	end,
 })
 
+vim.api.nvim_create_autocmd({ "VimEnter" }, {
+	callback = function()
+		vim.defer_fn(function()
+		vim.cmd("echo 'Press <Ctrl + s> on normal mode to check whether copilot is enabled'")
+		end, 3000)
+		vim.defer_fn(function()
+			vim.cmd("echo 'Press <Ctrl + right arrow> on insert mode to accept the grey text auto-suggestions from copilot'")
+		end, 10000)
+	end,
+})
