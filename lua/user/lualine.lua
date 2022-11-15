@@ -53,6 +53,5 @@ lualine.setup({
 		lualine_b = { "branch" },
 		lualine_c = { location },
 		lualine_x = { filetype },
-		lualine_y = { diagnostics },
 	},
 })
