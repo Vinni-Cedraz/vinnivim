@@ -123,14 +123,8 @@ If you want to install any from there, for example terraform_lsp(which adds more
 -- lua/usr/lsp/mason.lua
 local servers = {
 	"sumneko_lua",
-	"cssls",
-	"html",
-	"tsserver",
-	"pyright",
 	"bashls",
-	"jsonls",
-	"yamlls",
-  "terraform_lsp" -- New LSP
+	"clangd"
 }
 ```
 
@@ -160,21 +154,14 @@ You can install new plugins here: [plugins](https://github.com/LunarVim/nvim-bas
 - [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
 - [vim-bbye](https://github.com/moll/vim-bbye)
 - [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
-- [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)
-- [project.nvim](https://github.com/ahmedkhalf/project.nvim)
 - [impatient.nvim](https://github.com/lewis6991/impatient.nvim)
 - [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
 - [alpha-nvim](https://github.com/goolord/alpha-nvim)
-- [tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
-- [darkplus.nvim](https://github.com/LunarVim/darkplus.nvim)
 - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 - [cmp-buffer](https://github.com/hrsh7th/cmp-buffer)
 - [cmp-path](https://github.com/hrsh7th/cmp-path)
-- [cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)
 - [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)
 - [cmp-nvim-lua](https://github.com/hrsh7th/cmp-nvim-lua)
-- [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
-- [friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
 - [mason.nvim](https://github.com/williamboman/mason.nvim)
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 - [mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim)
