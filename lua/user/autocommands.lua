@@ -13,11 +13,11 @@ vim.api.nvim_create_autocmd("BufRead", {
 	end,
 })
 
--- the following autocommand sets "., libs, and srcs/**" as path everytime a .c/.h file is opened
+-- the following autocommand sets $HOME and all its subdirectories as path when a .c or .h file is opened
 vim.api.nvim_create_autocmd("BufRead", {
 	pattern = "*.c,*.h",
 	callback = function()
-		vim.cmd("set path+=.,libs,srcs/**")
+		vim.cmd("set path=$HOME/**")
 	end,
 })
 
